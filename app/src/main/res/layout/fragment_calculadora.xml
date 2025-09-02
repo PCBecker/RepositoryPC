@@ -1,0 +1,843 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:padding="16dp"
+    android:paddingBottom="16dp"
+    android:paddingTop="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".fragments.CalculadoraFragment">
+
+    <View
+        android:alpha="0.5"
+        android:background="@drawable/ic_launcher_background"
+        android:layout_width="match_parent"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        android:layout_height="2dp"/>
+
+    <TextView
+        android:id="@+id/visor2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/custom_text_border"
+        android:ellipsize="start"
+        android:gravity="end"
+        android:paddingEnd="5dp"
+        android:hint="@string/visor1"
+        android:lines="4"
+        android:minLines="1"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:scrollHorizontally="true"
+        android:singleLine="false"
+        android:textColor="@color/black"
+        android:textColorHint="#616161"
+        android:textSize="20sp"
+        tools:ignore="RtlSymmetry" />
+
+    <View
+        android:alpha="0.5"
+        android:background="@android:drawable/alert_dark_frame"
+        android:layout_width="match_parent"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        android:layout_height="2dp"/>
+
+    <TextView
+        android:id="@+id/visor1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:ellipsize="start"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="5dp"
+        android:gravity="end|center_vertical"
+        android:hint="@string/visor2"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textColorHint="#616161"
+        android:background="@drawable/custom_text_border"
+        android:textSize="18sp"
+        tools:ignore="RtlSymmetry" />
+
+    <View
+        android:alpha="0.5"
+        android:background="@drawable/ic_launcher_background"
+        android:layout_width="match_parent"
+        android:paddingBottom="1dp"
+        android:paddingTop="1dp"
+        android:layout_height="2dp"/>
+    
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:stretchColumns="*"
+        android:shrinkColumns="*"
+        android:gravity="center_horizontal"
+        tools:ignore="UselessParent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/eqgrau2"
+                android:text="@string/eqgrau2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/teal_700"
+                android:padding="2dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="SmallSp,TextSizeCheck,VisualLintButtonSize"
+                style="?android:attr/buttonBarButtonStyle"/> <!-- Adicione uma pequena margem entre os botões -->
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/eqgrau3"
+                android:text="@string/eqgrau3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/teal_700"
+                android:padding="2dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="SmallSp,TextSizeCheck,VisualLintButtonSize"
+                style="?android:attr/buttonBarButtonStyle" /> <!-- Adicione uma pequena margem entre os botões -->
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/funcW"
+                android:text="@string/lambert"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/teal_700"
+                android:padding="2dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="SmallSp,TextSizeCheck,VisualLintButtonSize"
+                style="?android:attr/buttonBarButtonStyle" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/help"
+                android:text="@string/help"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/teal_700"
+                android:padding="2dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="SmallSp,TextSizeCheck,VisualLintButtonSize"
+                style="?android:attr/buttonBarButtonStyle" />
+
+        </TableRow>
+
+<TableRow
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_horizontal">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/inv"
+        android:text="@string/inv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_span="1"
+        android:layout_weight="1"
+        android:height="50dp"
+        android:backgroundTint="@color/blacks"
+        android:padding="2dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:textStyle="bold|normal"
+        app:shapeAppearanceOverlay="@style/Buttons"
+        tools:ignore="SmallSp,TextSizeCheck,VisualLintButtonSize"
+        style="?android:attr/buttonBarButtonStyle" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cub"
+        android:text="@string/cub"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_span="1"
+        android:layout_weight="1"
+        android:height="50dp"
+        android:backgroundTint="@color/blacks"
+        android:padding="2dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:textStyle="bold|normal"
+        app:shapeAppearanceOverlay="@style/Buttons"
+        tools:ignore="SmallSp,TextSizeCheck,VisualLintButtonSize"
+        style="?android:attr/buttonBarButtonStyle" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fat"
+        android:text="@string/fat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_span="1"
+        android:layout_weight="1"
+        android:height="50dp"
+        android:backgroundTint="@color/blacks"
+        android:padding="2dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:textStyle="bold|normal"
+        app:shapeAppearanceOverlay="@style/Buttons"
+        tools:ignore="SmallSp,TextSizeCheck,VisualLintButtonSize"
+        style="?android:attr/buttonBarButtonStyle" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/gama"
+        android:text="@string/gama"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_span="1"
+        android:layout_weight="1"
+        android:height="50dp"
+        android:backgroundTint="@color/blacks"
+        android:padding="2dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:textStyle="bold|normal"
+        app:shapeAppearanceOverlay="@style/Buttons"
+        tools:ignore="SmallSp,TextSizeCheck,VisualLintButtonSize"
+        style="?android:attr/buttonBarButtonStyle" />
+
+</TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/x2"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/x2"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="SmallSp,TextSizeCheck,VisualLintButtonSize" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/x3"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/x3"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="SmallSp,TextSizeCheck,VisualLintButtonSize" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/exp"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/expX"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="SmallSp,TextSizeCheck,VisualLintButtonSize" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/clear"
+                android:text="@string/backspace"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="SmallSp,TextSizeCheck,VisualLintButtonSize"
+                style="?android:attr/buttonBarButtonStyle" />
+
+
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sin"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/sin"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="SmallSp,TextSizeCheck,VisualLintButtonSize" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cos"
+                android:text="@string/cos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="SmallSp,TextSizeCheck,VisualLintButtonSize"
+                style="?android:attr/buttonBarButtonStyle"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/tan"
+                android:text="@string/tan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="SmallSp,TextSizeCheck,VisualLintButtonSize"
+                style="?android:attr/buttonBarButtonStyle"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/ln"
+                android:text="@string/ln"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="SmallSp,TextSizeCheck,VisualLintButtonSize"
+                style="?android:attr/buttonBarButtonStyle"/>
+
+        </TableRow>
+
+        <View
+            android:alpha="0.5"
+            android:background="@drawable/ic_launcher_background"
+            android:layout_width="match_parent"
+            android:paddingBottom="1dp"
+            android:paddingTop="1dp"
+            android:layout_height="2dp"/>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/clearText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/red"
+                android:padding="2dp"
+                android:text="@string/clear_text"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="TextSizeCheck,VisualLintButtonSize"
+                style="?android:attr/buttonBarButtonStyle"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/botaoAbPar"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/orange"
+                android:padding="2dp"
+                android:text="@string/ab_parentesis"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="TextSizeCheck,VisualLintButtonSize,TextContrastCheck" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/botaoFechPar"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/orange"
+                android:padding="2dp"
+                android:text="@string/fec_parentesis"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="TextSizeCheck,VisualLintButtonSize,TextContrastCheck" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/multiplic"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/orange"
+                android:padding="2dp"
+                android:text="@string/multiplic"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="TextSizeCheck,VisualLintButtonSize,TextContrastCheck" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/seven"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/seven"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="TextSizeCheck,VisualLintButtonSize"
+                style="?android:attr/buttonBarButtonStyle"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/eight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/eight"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="TextSizeCheck,VisualLintButtonSize"
+                style="?android:attr/buttonBarButtonStyle"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nine"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/nine"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="TextSizeCheck,VisualLintButtonSize"
+                style="?android:attr/buttonBarButtonStyle"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/divide"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/orange"
+                android:padding="2dp"
+                android:text="@string/divide"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="TextSizeCheck,VisualLintButtonSize,TextContrastCheck" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/four"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/four"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="TextSizeCheck,VisualLintButtonSize"
+                style="?android:attr/buttonBarButtonStyle"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/five"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/five"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="TextSizeCheck,VisualLintButtonSize"
+                style="?android:attr/buttonBarButtonStyle"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/six"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/six"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="TextSizeCheck,VisualLintButtonSize"
+                style="?android:attr/buttonBarButtonStyle"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/subtrac"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/orange"
+                android:padding="2dp"
+                android:text="@string/subtracao"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="TextSizeCheck,VisualLintButtonSize,TextContrastCheck" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/three"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/three"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="TextSizeCheck,VisualLintButtonSize"
+                style="?android:attr/buttonBarButtonStyle"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/two"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/two"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="TextSizeCheck,VisualLintButtonSize"
+                style="?android:attr/buttonBarButtonStyle"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/one"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/one"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="TextSizeCheck,VisualLintButtonSize"
+                style="?android:attr/buttonBarButtonStyle"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/soma"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/orange"
+                android:padding="2dp"
+                android:text="@string/soma"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="TextSizeCheck,VisualLintButtonSize,TextContrastCheck" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sqrt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/sqrt"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="TextSizeCheck,VisualLintButtonSize"
+                style="?android:attr/buttonBarButtonStyle"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/zero"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/zero"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="TextSizeCheck,VisualLintButtonSize"
+                style="?android:attr/buttonBarButtonStyle"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/ponto"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/blacks"
+                android:padding="2dp"
+                android:text="@string/ponto"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="TextSizeCheck,VisualLintButtonSize"
+                style="?android:attr/buttonBarButtonStyle"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/igual"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:height="50dp"
+                android:backgroundTint="@color/green"
+                android:padding="2dp"
+                android:text="@string/igual"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:shapeAppearanceOverlay="@style/Buttons"
+                tools:ignore="TextSizeCheck,VisualLintButtonSize"
+                style="?android:attr/buttonBarButtonStyle"/>
+
+        </TableRow>
+
+    </TableLayout>
+    <View
+        android:alpha="0.5"
+        android:background="@drawable/ic_launcher_background"
+        android:layout_width="match_parent"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        android:layout_height="2dp"/>
+
+</LinearLayout>

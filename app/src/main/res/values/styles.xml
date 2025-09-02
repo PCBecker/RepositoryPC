@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Estilo para o botão com efeito Glassmorphism -->
+    <style name="Widget.Calculator.Button.Glassmorphism" parent="Widget.Material3.Button">
+        <item name="android:background">@drawable/glass_button_background</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:stateListAnimator">@null</item> <!-- Remove a animação de elevação padrão -->
+        <item name="android:elevation">4dp</item> <!-- Sombra sutil para profundidade -->
+        <item name="cornerRadius">16dp</item> <!-- Garante que MaterialButton use o cornerRadius -->
+        <item name="rippleColor">#66FFFFFF</item> <!-- Cor da onda ao clicar -->
+    </style>
+</resources>

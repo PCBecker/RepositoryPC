@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="?attr/colorControlHighlight"> <!-- Efeito de clique (ripple) -->
+
+    <item>
+        <shape android:shape="rectangle">
+            <!-- Cor de fundo semitransparente (ex: branco com 20% de opacidade) -->
+            <solid android:color="#66FFFFFF" /> <!-- AARRGGBB: AA é o canal alfa (transparência) -->
+
+            <!-- Gradiente para simular reflexo de luz (opcional, mas recomendado) -->
+            <gradient
+                android:angle="270"
+                android:endColor="#40FFFFFF"
+                android:startColor="#B0FFFFFF"
+                android:type="linear" />
+
+            <!-- Borda sutil (cor clara, muito fina) -->
+            <stroke
+                android:width="1.5dp"
+                android:color="#FFCCCCCC" /> <!-- Branca com 50% de opacidade -->
+
+            <!-- Cantos arredondados -->
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+
+</ripple>
